@@ -1,0 +1,6 @@
+{
+  "name": "MISTERIOS DEL MUNDO – El universo de los mitos y leyendas",
+  "description": "Enciclopedia internacional e interactiva dedicada a los mitos, leyendas, dioses, criaturas legendarias, lugares misteriosos y folclore de los 195 países del mundo.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

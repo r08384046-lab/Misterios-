@@ -1,0 +1,66 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-display: "Cinzel", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+  }
+}
+
+/* Subtle museum archival texture and chiaroscuro atmosphere */
+.archival-canvas {
+  background-image:
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(36, 20, 59, 0.42), transparent 70%),
+    radial-gradient(circle at 85% 20%, rgba(100, 30, 43, 0.14), transparent 45%),
+    radial-gradient(circle at 15% 65%, rgba(201, 164, 92, 0.06), transparent 40%);
+}
+
+html:not(.dark) .archival-canvas {
+  background-image:
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(201, 164, 92, 0.14), transparent 70%),
+    radial-gradient(circle at 85% 20%, rgba(100, 30, 43, 0.06), transparent 45%);
+}
+
+.parchment-grain {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(201, 164, 92, 0.25);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(201, 164, 92, 0.45);
+}

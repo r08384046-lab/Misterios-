@@ -1,11 +1,26 @@
-<div align="center">
+# MISTERIOS DEL MUNDO – El universo de los mitos y leyendas
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+Enciclopedia internacional e interactiva dedicada a recopilar los mitos, leyendas, dioses, criaturas legendarias, lugares misteriosos y folclore tradicional de los 195 países del mundo, con una sección especial consagrada al folclore paraguayo y las tradiciones guaraníes.
 
-  <h1>Built with AI Studio</h2>
+## Despliegue en Render (Static Site)
 
-  <p>The fastest path from prompt to production with Gemini.</p>
+1. Sube este repositorio a GitHub.
+2. En Render, selecciona **New + → Static Site** y conecta tu repositorio.
+3. Configura los parámetros exactos:
+   - **Root Directory**: *(vacío)*
+   - **Build Command**: `npm install && npm run build`
+   - **Publish Directory**: `dist`
+4. El archivo `public/_redirects` ya incluye la regla `/* /index.html 200` para enrutamiento SPA.
 
-  <a href="https://aistudio.google.com/apps">Start building</a>
+## Desarrollo local
 
-</div>
+```bash
+npm install
+npm run dev
+```
+
+## Compilación de producción
+
+```bash
+npm run build
+```
